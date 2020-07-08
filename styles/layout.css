@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 html {
     overflow-y:scroll;
 }
@@ -6,8 +8,8 @@ body {
     margin:0;
     padding:0;
     font-size:13px;
-    font-family:Georgia, "Times New Roman", Times, serif; 
-    color:#919191; background-color:#232323;}
+    font-family:"Montserrat", sans-serif; 
+    color:#F2FaFF; background-color:#46E1AB;}
 
 .clear:after {
     content:"."; 
@@ -37,7 +39,7 @@ a{
 code{
     font-weight:normal; 
     font-style:normal; 
-    font-family:Georgia, "Times New Roman", Times, serif;
+    font-family:"Montserrat", sans-serif;
 }
 
 .fl_left{
@@ -57,7 +59,7 @@ img{
 
 .imgholder, .imgl, .imgr {
     padding:4px; 
-    border:1px solid #D6D6D6; 
+    border:1px solid #F2FAFF; 
     text-align:center;
 }
 
@@ -85,7 +87,7 @@ q {
     display:block; 
     padding:0 10px 8px 10px; 
     color:#979797; 
-    background-color:#ECECEC; 
+    background-color:#F2FAFF; 
     font-style:italic; 
     line-height:normal;
 }
@@ -112,8 +114,8 @@ div.wrapper {
 }
 
 .row1, .row1 a {
-    color:#C0BAB6; 
-    background-color:#333333;
+    color:#ffffff; 
+    background-color:#2B96CD;
 }
 
 .row2 {
@@ -122,13 +124,13 @@ div.wrapper {
 }
 
 .row2 a {
-    color:#FF9900; 
+    color:#E99B26; 
     background-color:#FFFFFF;
 }
 
 .row3, .row3 a { 
     color:#919191; 
-    background-color:#232323;
+    background-color:#46E1AB;
 }
 
 /*----------------------------------------------Generalise-------------------------------------*/
@@ -162,7 +164,7 @@ blockquote, q {
     display:block; 
     padding:8px 10px; 
     color:#979797; 
-    background-color:#ECECEC; 
+    background-color:#F2FAFF; 
     font-style:italic; 
     line-height:normal;
 }
@@ -190,7 +192,7 @@ legend {
 
 input, textarea, select {
     font-size:12px; 
-    font-family:Georgia,"Times New Roman",Times,serif;
+    font-family:"Montserrat", sans-serif;
 }
 
 .one_quarter, .two_quarter, .three_quarter, .four_quarter {
@@ -281,8 +283,8 @@ input, textarea, select {
     width:200px; 
     margin:0; 
     padding:5px; 
-    color:#C0BAB6; 
-    background-color:#232323; 
+    color:#ffffff; 
+    background-color:#46E1AB; 
     border:1px solid #666666;
 }
 
@@ -294,7 +296,7 @@ input, textarea, select {
     font-weight:bold; 
     text-transform:uppercase; 
     color:#FFFFFF; 
-    background-color:#FF9900; 
+    background-color:#E99B26; 
     border:none; 
     cursor:pointer;
 }
@@ -304,8 +306,8 @@ input, textarea, select {
     width:100%; 
     margin:0; 
     padding:20px 0; 
-    color:#C0BAB6; 
-    background-color:#232323; 
+    color:#ffffff; 
+    background-color:#0078AD; 
     clear:both;
 }
 
@@ -324,13 +326,13 @@ input, textarea, select {
 }
 
 #header nav li a {
-    color:#C0BAB6; 
-    background-color:#232323;
+    color:#ffffff; 
+    background-color:#0078AD;
 }
 
 #header nav li a:hover {
-    color:#FF9900; 
-    background-color:#232323;
+    color:#E99B26; 
+    background-color:#0078AD;
 }
 
 /*----------------------------------------------Content Area-------------------------------------*/
@@ -375,13 +377,13 @@ input, textarea, select {
     padding:20px; 
     overflow:hidden; 
     color:#989898; 
-    background-color:#464646; 
+    background-color:#EEE8A9; 
     line-height:1.6em;
 }
 
 #container #slider figure figcaption a {
-    color:#FF9900; 
-    background-color:#464646;
+    color:#E99B26; 
+    background-color:#EEE8A9;
 }
 
 #container #slider figure h2 {
@@ -399,7 +401,7 @@ input, textarea, select {
     width:100%; 
     margin-bottom:60px; 
     padding-bottom:20px; 
-    border-bottom:1px solid #D6D6D6;
+    border-bottom:1px solid #F2FAFF;
 }
 
 #container #intro section {
@@ -437,7 +439,7 @@ input, textarea, select {
     height:130px; 
     margin:0; 
     padding:4px; 
-    border:1px solid #D6D6D6;
+    border:1px solid #F2FAFF;
 }
 
 #container #intro section article figure figcaption {
@@ -476,6 +478,7 @@ input, textarea, select {
 
 #footer {
     padding:20px 0;
+    color: #7d7d7d;
 }
 
 #footer p {
