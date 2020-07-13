@@ -1,3 +1,3 @@
 # Tempest Tech
 
-[Site](https://tempesttech.github.io/) in progress
+[Site](https://tempesttech.github.io/) for Project Island Time in progress
