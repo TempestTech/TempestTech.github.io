@@ -1,81 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Tempest Tech</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="styles/layout.css" type="text/css">
-<!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
-</head>
-<body>
-<div class="wrapper row1">
-  <header id="header" class="clear">
-    <div id="hgroup">
-      <h1><a href="#">Tempest Tech</a></h1>
-      <h2>Lorem ipsum</h2>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Project Island Time</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Project Island Time</div>
+      </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#">Text Link</a></li>
-        <li><a href="#">Text Link</a></li>
-        <li><a href="#">Text Link</a></li>
-        <li><a href="#">Text Link</a></li>
-        <li class="last"><a href="#">Text Link</a></li>
-      </ul>
-    </nav>
-  </header>
-</div>
-<!-- content -->
-<div class="wrapper row2">
-  <div id="container" class="clear">
-    <!-- Slider -->
-    <section id="slider" class="clear">
-      <figure><img src="images/place_holder.gif" alt="">
-        <figcaption>
-          <h2>Eu justo augue estas</h2>
-          <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo nulla et feugiat adipiscinia pellentum leo.</p>
-        </figcaption>
-      </figure>
-    </section>
-    <!-- main content -->
-    <div id="intro">
-      <section class="clear">
-        <!-- article 1 -->
-        <article class="two_quarter">
-          <h2>Lorum ipsum dolor</h2>
-          <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-          <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </article>
-        <!-- article 2 -->
-        <article class="two_quarter lastbox">
-          <figure>
-            <ul class="clear">
-              <li><a href="#"><img src="images/square.gif" width="130" height="130" alt=""></a></li>
-              <li><a href="#"><img src="images/square.gif" width="130" height="130" alt=""></a></li>
-              <li class="last"><a href="#"><img src="images/square.gif" width="130" height="130" alt=""></a></li>
-            </ul>
-          </figure>
-        </article>
-      </section>
-    </div>
-    <div id="homepage" class="last clear">
-      <section class="one_quarter">
-      </section>
-      <section class="one_quarter">
-      </section>
-      <section class="two_quarter lastbox">
-        <h2 class="title">About US</h2>
-        <img class="imgl" src="images/square.gif" width="130" height="130" alt="">
-        <p>Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.</p>
-      </section>
-    </div>
-    <!-- / content body -->
-  </div>
-</div>
-<!-- Footer -->
-<div class="wrapper row3">
-  <footer id="footer" class="clear">
-    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Tempest Tech</a></p>
-  </footer>
-</div>
-</body>
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/Default WebGL.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/Default WebGL.data.gz",
+        frameworkUrl: buildUrl + "/Default WebGL.framework.js.gz",
+        codeUrl: buildUrl + "/Default WebGL.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Project Island Time",
+        productVersion: "0.1",
+      };
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
 </html>
